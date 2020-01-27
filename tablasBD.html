@@ -123,6 +123,7 @@
         <!--acceso BD-->
         <script type="text/javascript">
             
+
            
             $(document).ready(function(){
                
@@ -136,7 +137,7 @@
                         +"<td class='fk'>"+equipo.razon+"</td>"
                         +"<td>"+equipo.anio+"</td>"
                         +"<td>"+"<img src='imagenes/"+equipo.escudo+"' class='escudo' alt='escudo'>"+"</td>"
-                        +"<td>"+equipo.estadio+"</td>"
+                        +"<td>"+equipo.estadio+"<a href="+equipo.razon.replace(/ /g, "").toLowerCase()+".html class='fa fa-map-marker  aria-hidden='true'></i></td>"
                         +"</tr>";
                         $(newRow).appendTo("#tablajson tbody");
                     });
@@ -171,6 +172,8 @@
                     });
                 });
             });
+        
+            
 
             $(".apply").click(function(){
 

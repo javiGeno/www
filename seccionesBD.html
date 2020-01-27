@@ -69,9 +69,9 @@
                 $.getJSON(url,function(equipos){
                     $.each(equipos, function(i,equipo){
                         var seccion =
-                        "<section class='col-sm-4 container justify-content-center'>"+
+                        "<section class='col-lg-4 container justify-content-center'>"+
                             "<div class='tarjeta row container' >"+
-                                "<section class='tarjetaEq col-sm-12 justify-content-center'>"+
+                                "<section class='tarjetaEq col-lg-12 justify-content-center'>"+
                                     "<header>"+
                                         "<h5>"+equipo.razon+"</h5>"+
                                         "<h6>"+equipo.anio+"</h6>"+
@@ -79,11 +79,11 @@
                                         "<h4>"+"<img src='imagenes/"+equipo.escudo+"' class='escudo' alt='escudo'>"+"</h4>"+
                                     "</header>"+
                                 "</section>"+
-                                "<section id='"+equipo.razon.replace(/ /g, "").toLowerCase()+"' class='tarjetaJug col-sm-12 justify-content-center container'  style='border-style:solid'>"+
-                                    "<div id='portero' class='row container col-sm-12  justify-content-center'>"+"</div>"+
-                                    "<div id='defensa' class='row container col-sm-12  justify-content-center'>"+"</div>"+
-                                    "<div id='medio' class='row container col-sm-12  justify-content-center'>"+"</div>"+
-                                    "<div id='delantero' class='row container col-sm-12  justify-content-center'>"+"</div>"+
+                                "<section id='"+equipo.razon.replace(/ /g, "").toLowerCase()+"' class='tarjetaJug col-lg-12 justify-content-center container'  style='border-style:solid'>"+
+                                    "<div id='portero' class='row container col-xl-12  justify-content-center'>"+"</div>"+
+                                    "<div id='defensa' class='row container col-xl-12  justify-content-center'>"+"</div>"+
+                                    "<div id='medio' class='row container col-xl-12  justify-content-center'>"+"</div>"+
+                                    "<div id='delantero' class='row container col-xl-12  justify-content-center'>"+"</div>"+
                                 "</section>"+
                             "</div>"+
                         "</section>";
@@ -94,6 +94,8 @@
                         obtenerArticles(equipo.razon);
                     });
                 });
+
+                
             });
 
            
@@ -121,6 +123,37 @@
                              });
                      
             }
+
+            var cerrado=true;
+
+            $("#contenido").on("click",".tarjetaEq", function(){
+                
+                if(cerrado)
+                {
+                    $(this).next(".tarjetaJug").css({
+
+                        'height': '280px',
+                        'visibility': 'visible'
+                    })
+
+                    cerrado=false;
+                }
+                else
+                {
+                    $(this).next(".tarjetaJug").css({
+
+                        'height': '0px',
+                        'visibility': 'hidden'
+                    })
+
+                    cerrado=true;
+
+                }
+
+
+            });
+
+           
             
 
         </script>

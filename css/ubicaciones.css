@@ -1,0 +1,33 @@
+body{
+    justify-content: center;
+    background-color:black;
+}
+
+
+body::after{
+
+
+    content: "";
+    background-image: url("../imagenes/fondoPag.jpg");
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+    
+    
+}
+
+.centrar{
+
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.centrado{
+
+    display:inline;
+}

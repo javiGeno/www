@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="APP">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/ccsPrincipal.css">
+        <link rel="stylesheet" href="css/tablasyAngular.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="controlador.js"></script>
+		<title>Inicio</title>
+	</head>
+	<body class="p-5">
+		 
+		<nav  class="navbar navbar-expand-md navbar-light bg-info border-bottom border-secondary fixed-top ">
+				
+			<div class="container">
+				<a href="inicio.html" class="navbar-brand text-dark fa fa-home iconos"></a>
+				<button type="button" class="navbar-toggler"  data-toggle="collapse" data-target="#menu">
+						<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="menu">
+					<ul class="navbar-nav  ml-auto">
+							<li class="nav-item dropdown"><a href="front.html" class="iconos2 nav-link fa fa-desktop dropdown-toggle" data-toggle="dropdown" > FRONT-END</a>
+								<div class="dropdown-menu  bg-secondary ">
+									<a href="front.html" class="dropdown-item ">¿En qué consiste?</a>
+									<a href="front.html#framef" class="dropdown-item ">Frameworks</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown "><a href="back.html" class="iconos2 nav-link fa fa-database  dropdown-toggle"   data-toggle="dropdown" > BACK-END</a>
+								<div class="dropdown-menu bg-secondary ">
+									<a href="back.html" class="dropdown-item ">¿En qué consiste?</a>
+									<a href="back.html#frameb" class="dropdown-item ">Frameworks</a>
+								</div>
+							</li>
+							<li class="nav-item"><a href="angular.html" class="iconos2 nav-link fa fa-font " target="contenidos"> ANGULAR</a></li>
+							<li class="nav-item dropdown"><a href="tablasBD.html" class="iconos2 nav-link fa fa-table dropdown-toggle" data-toggle="dropdown"> TABLAS</a>
+                                <div class="dropdown-menu bg-secondary ">
+                                    <a href="#" class="dropdown-item ">Mostrar Tablas</a>
+                                    <a href="seccionesBD.html" class="dropdown-item ">Mostrar Secciones</a>
+                                </div>
+                            </li>	
+						</ul>
+					</div>
+			</div>
+			
+	   </nav>
+
+		<section class="row lead ">
+            
+            <table class="table-responsive-sm col-sm-12 mt-5 " id="tablajson">
+                <thead>
+                <th>RAZON SOCIAL</th>
+                <th>FUNDACIÓN</th>
+                <th>ESCUDO</th>
+                <th>ESTADIO</th>		
+                </thead>
+                <tbody></tbody>
+            </table>
+            <h2 id="nombreEquipo" class=" col-sm-12 mt-5"></h2>
+            <table class="table-responsive-sm col-sm-11 m-2" id="tablajson2">
+                <thead>
+                <th>NOMBRE</th>
+                <th>EDAD
+                    <select  name="edad" id="edad">
+                        <option>-</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">31</option>
+                        <option value="33">33</option>
+                        <option value="34">34</option>
+                        <option value="35">35</option>
+                        <option value="36">36</option>
+                        <option value="37">37</option>
+                        <option value="38">38</option>
+                        <option value="39">39</option>
+                    </select>
+                </th>
+                <th>NACIONALIDAD
+                    <select name="nacion" id="nacion">
+                        <option>-</option>
+                        <option value="FRANCIA">Francia</option>
+                        <option value="ARGENTINA">Argentina</option>
+                        <option value="ESPAÑA">España</option>
+                        <option value="PORTUGAL">Portugal</option>
+                        <option value="CROACIA">Croacia</option>
+                        <option value="ALEMANIA">Alemania</option>
+                        <option value="SLOVENIA">Slovenia</option>
+                        <option value="HOLANDA">Holanda</option>
+                    </select>
+                </th>
+                <th>POSICIÓN
+                    <select name="posicion" id="posicion">
+                        <option>-</option>
+                        <option value="PORTERO">Portero</option>
+                        <option value="DEFENSA">Defensa</option>
+                        <option value="MEDIO">Medio</option>
+                        <option value="DELANTERO">Delantero</option>
+                        
+                    </select>
+                </th>		
+                </thead>
+                
+               
+                <tbody></tbody>
+            </table>
+            <div class="mt-2 "><button class="apply">Aplicar</button></div>
+        </section>        
+        
+        
+    
+	
+		<!--https://my-json-server.typicode.com/javiGeno/front-back  PARA ACCEDER A JSON EXTERNO-->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!--acceso BD-->
+        <script type="text/javascript">
+            
+           
+            $(document).ready(function(){
+               
+                var url="accesoDatos.php";
+                $("#tablajson tbody").html("");
+                $.getJSON(url,function(equipos){
+                    console.log(equipos);
+                    $.each(equipos, function(i,equipo){
+                        var newRow =
+                        "<tr class='filaPadre'>"
+                        +"<td class='fk'>"+equipo.razon+"</td>"
+                        +"<td>"+equipo.anio+"</td>"
+                        +"<td>"+"<img src='imagenes/"+equipo.escudo+"' class='escudo' alt='escudo'>"+"</td>"
+                        +"<td>"+equipo.estadio+"</td>"
+                        +"</tr>";
+                        $(newRow).appendTo("#tablajson tbody");
+                    });
+                });
+            });
+
+            $("section").on("click",".filaPadre", function(){
+                var colores={"ATCO MADRID":"red", 
+                             "FC BARCELONA":"DARKRED", 
+                             "REAL MADRID CF":"BLUEVIOLET", 
+                             "REAL BETIS BALOMPIE":"green", 
+                             "SEVILLA FC":"MAROON"};
+                             //atco, brsa, madrid, beti, sevilla
+                var url="accesoDatosHijo.php?equipo="+$(this).children().eq(0).text();
+                console.log($(this).children().eq(0).text());
+                var equipo=$(this).children().eq(0).text();
+                $("#nombreEquipo").text(equipo);
+                $("#nombreEquipo").css({'color': colores[equipo]});
+                $("#tablajson2 tbody").css({"color":colores[equipo]});
+                $.getJSON(url, function(jugadores){
+                    console.log(jugadores);
+                    $('.filaHijo').remove();
+                    $.each(jugadores, function(i,jugador){
+                        var newRow =
+                        "<tr class='filaHijo'>"
+                        +"<td>"+jugador.nombre+"</td>"
+                        +"<td>"+jugador.edad+"</td>"
+                        +"<td>"+jugador.nacionalidad+"</td>"
+                        +"<td>"+jugador.posicion+"</td>"
+                        +"</tr>";
+                        $(newRow).appendTo("#tablajson2 tbody");
+                    });
+                });
+            });
+
+            $(".apply").click(function(){
+
+                var filtroEdad=$('select[name="edad"] option:selected').text();
+                var filtroNacion=$('select[name="nacion"] option:selected').text();
+                var filtroPosicion=$('select[name="posicion"] option:selected').text();
+                var filtroEquipo=$("h2").text();
+                var url="accesoDatosFiltrados.php?equipo="+filtroEquipo+
+                                                  "&edad="+filtroEdad+
+                                                  "&nacion="+filtroNacion+
+                                                  "&pos="+filtroPosicion;
+                
+                $.getJSON(url, function(jugadores){
+                    console.log(jugadores);
+                    $('.filaHijo').remove();
+                    $.each(jugadores, function(i,jugador){
+                        //El siguiente bloque podria ir dentro de una funcion
+                        var newRow =
+                        "<tr class='filaHijo'>"
+                        +"<td>"+jugador.nombre+"</td>"
+                        +"<td>"+jugador.edad+"</td>"
+                        +"<td>"+jugador.nacionalidad+"</td>"
+                        +"<td>"+jugador.posicion+"</td>"
+                        +"</tr>";
+                        $(newRow).appendTo("#tablajson2 tbody");
+                    });
+                });
+            });
+
+        </script>
+			
+    </body>
+    
+
+
+
+</html>

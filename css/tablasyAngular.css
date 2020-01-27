@@ -1,0 +1,65 @@
+.escudo{
+
+    height: 50px;
+    width: 50px;
+    border-radius: 3px;
+    border-style: outset;
+}
+
+main{
+
+    border-style: outset;
+    
+}
+
+.pagination {
+   
+    padding-left: 0;
+    list-style: none;
+    border-radius: .25rem;
+    
+  
+}
+
+
+
+thead{
+
+    background-image: linear-gradient(rgb(3, 40, 88), rgb(26, 66, 139));
+    border: outset;
+    
+}
+tbody{
+
+    background-image: linear-gradient(rgb(170, 171, 172), rgb(227, 229, 233));
+    color:navy;
+    font-family: fantasy;
+}
+
+
+table{
+    border: outset;
+    color: darkgray;
+}
+
+.title{
+
+    font-size: 18px;
+    display: block;
+    background-image: linear-gradient(rgb(3, 40, 88), rgb(26, 66, 139));
+    color: darkgray;
+    padding: 5%;
+    transition: all 1s;
+    border-style: outset;
+}
+
+td{
+    border-style: outset;
+}
+
+#tablajson2{
+
+    text-align: center;
+    padding: 5%;
+}
+

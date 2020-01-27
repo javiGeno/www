@@ -1,0 +1,161 @@
+
+
+.dropdown-item:hover{
+
+    color: grey;
+}
+.dropdown-item{
+   
+    color:white;
+}
+
+article{
+    font-family: fantasy;
+}
+
+footer{
+
+    
+    height: 50px;
+ 
+}
+
+body{
+    padding-top: 10%;
+    background-attachment: fixed;
+    overflow: scroll;
+}
+
+body::after{
+
+
+    content: "";
+    background-image: url("../imagenes/fondoPag.jpg");
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+    
+    
+}
+
+section{
+
+    margin-top: 5%;
+}
+
+.enlacesExt{
+    border-style: outset;
+    border-radius: 10px;
+    overflow:hidden;
+   
+    
+
+}
+
+.enlacesExt h2{
+
+    width: 100%;
+}
+
+.enlacesExt div a{
+
+    text-align: center;
+}
+
+.iconos{
+
+    font-size: 50px;    
+}
+
+.iconos2{
+
+    font-size: 20px;
+
+}
+
+.slide{
+
+    opacity: 0;
+    transition: all 1s;
+    border-style: ridge;
+    height: 150px;
+    width: 300px;
+    
+   
+}
+
+
+.caja_slide
+{
+    
+    height: 40%;
+ 
+}
+
+
+
+
+.wrapImg{
+
+    width: 66px;
+    height: 66px;
+    margin-left: 40%;
+}
+
+a img{
+
+    width: 60px;
+    height: 60px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: lightslategray;
+    margin: 1%;
+    margin-top: 25%;
+    display: list-item;
+    transition: all 0.5s linear;
+   
+}
+
+a img:hover{
+
+    width: 65px;
+    height: 65px;
+    box-shadow: 5px 5px lightsteelblue;
+
+}
+
+/*RESPONSIVE*/
+@media (min-width: 540px) {  
+   
+    .enlacesExt h2:first-child{
+
+        text-align: center;
+        font-size: 1.0em;
+ 
+     } 
+
+   
+}  
+    
+@media (min-width: 768px) {  
+    
+    
+
+   
+}  
+    
+@media (min-width: 992px) {  
+    
+   
+}  
+    
+@media (min-width: 1200px) {  
+   
+    
+
+   
+}

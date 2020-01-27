@@ -1,0 +1,46 @@
+.buscador{
+
+    font-family: cursive;
+    width: 80%;
+    
+    
+
+}
+
+.caja_buscador{
+
+    background-color: darkgray;
+    border-radius: 2px;
+    width: 85%;
+    border-style: outset;
+    
+}
+
+.frameworks{
+
+    font-family: fantasy;
+    border-style: outset;
+    border-radius: 5px;
+}
+
+.datosFrame{
+
+    background-image: linear-gradient(rgb(3, 40, 88), rgb(26, 66, 139));
+    border-radius: 3px;
+    color: darkgrey;
+    border-style: outset;
+    padding: 2%;
+
+}
+
+.lista1{
+
+    list-style: none;
+    
+}
+
+.lista2{
+    
+    list-style: none;
+    
+}

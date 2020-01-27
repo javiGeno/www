@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="APP">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/ccsPrincipal.css">
+        <link rel="stylesheet" href="css/tablasyAngular.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+		<script src="controlador.js"></script>
+		<title>Inicio</title>
+	</head>
+	<body>
+		 
+		<nav  class="navbar navbar-expand-md navbar-light bg-info border-bottom border-secondary fixed-top ">
+				
+			<div class="container">
+				<a href="inicio.html" class="navbar-brand text-dark fa fa-home iconos"></a>
+				<button type="button" class="navbar-toggler"  data-toggle="collapse" data-target="#menu">
+						<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="menu">
+					<ul class="navbar-nav  ml-auto">
+							<li class="nav-item dropdown"><a href="front.html" class="iconos2 nav-link fa fa-desktop dropdown-toggle" data-toggle="dropdown" > FRONT-END</a>
+								<div class="dropdown-menu  bg-secondary ">
+									<a href="front.html" class="dropdown-item ">¿En qué consiste?</a>
+									<a href="front.html#framef" class="dropdown-item ">Frameworks</a>
+								</div>
+							</li>
+							<li class="nav-item dropdown "><a href="back.html" class="iconos2 nav-link fa fa-database  dropdown-toggle"   data-toggle="dropdown" > BACK-END</a>
+								<div class="dropdown-menu bg-secondary ">
+									<a href="back.html" class="dropdown-item ">¿En qué consiste?</a>
+									<a href="back.html#frameb" class="dropdown-item ">Frameworks</a>
+								</div>
+							</li>
+							<li class="nav-item"><a href="angular.html" class="iconos2 nav-link fa fa-font " target="contenidos"> ANGULAR</a></li>
+							<li class="nav-item dropdown"><a href="tablasBD.html" class="iconos2 nav-link fa fa-table dropdown-toggle" data-toggle="dropdown"> TABLAS</a>
+                                <div class="dropdown-menu bg-secondary ">
+                                    <a href="tablasBD.html" class="dropdown-item ">Mostrar Tablas</a>
+                                    <a href="#" class="dropdown-item ">Mostrar Secciones</a>
+                                </div>
+                            </li>	
+						</ul>
+					</div>
+			</div>
+			
+	   </nav>
+
+		<section id="contenido" class="row lead m-5">
+            
+
+           
+        </section>        
+        
+        
+    
+	
+		<!--https://my-json-server.typicode.com/javiGeno/front-back  PARA ACCEDER A JSON EXTERNO-->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" ></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!--acceso BD-->
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+                var url="accesoDatos.php";
+                $("#contenido").html("");
+                $.getJSON(url,function(equipos){
+                    $.each(equipos, function(i,equipo){
+                        var seccion =
+                        "<section id='"+equipo.razon.replace(/ /g, "").toLowerCase()+"' class='col-sm-4 container'>"+
+                            "<header>"+
+                                "<h2>"+equipo.razon+"</h2>"+
+                                "<h4>"+equipo.anio+"</h4>"+
+                                "<h4>"+equipo.estadio+"</h4>"+
+                                "<h4>"+"<img src='imagenes/"+equipo.escudo+"' class='escudo' alt='escudo'>"+"</h4>"+
+                            "</header>"+
+                        "</section>";
+                        $(seccion).appendTo("#contenido");
+                        obtenerArticles(equipo.razon);
+                    });
+                });
+            });
+
+           
+            function obtenerArticles(equipo)
+            {
+                var url="accesoDatosHijo.php?equipo="+equipo;
+
+                
+               
+                json=$.getJSON(url, function(jugadores){
+                                $.each(jugadores, function(i,jugador){
+                                    var newArticle =
+                                    "<article>"
+                                    +"<h5>NOMBRE: "+jugador.nombre+"</h5>"
+                                    +"<h5>EDAD: "+jugador.edad+"</h5>"
+                                    +"<h5>NACIONALIDAD: "+jugador.nacionalidad+"</h5>"
+                                    +"<h5>POSICION: "+jugador.posicion+"</h5>"
+                                    +"</article></br>";
+                                    
+                                    $(newArticle).appendTo('#'+equipo.replace(/ /g, "").toLowerCase());
+                                   
+                                });
+                                    
+                                
+                             });
+                     
+            }
+            
+
+        </script>
+			
+    </body>
+    
+
+
+
+</html>

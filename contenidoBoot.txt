@@ -1,0 +1,45 @@
+#Para atributo class
+    -h lucirá como tal.
+    -display-(numero)  genera tamaño
+    -text-muted atenua el color
+    -lead (da estilo chulo)
+    -font-weigh-bold
+    -font-weigh-italic
+    -text-uppercase
+    -text-capitalize
+    -blockquote 
+    https://getbootstrap.com/docs/4.0/content/typography
+
+
+#elementos flotantes 
+    -clearfix (permitir elementos encima)
+    -fixed-top (elemento fijo abajo)
+
+#colores 
+    -text-primary
+    -text-succes
+
+#margenes y padding
+    -mx (afecta al eje x)
+    -my (afecta al eje y)
+
+#responsive
+    -pequeño 576px
+    -mediano 768px
+    -grande 992px
+    -extragrande 1200px
+
+#botones y enlaces (mismas propiedades) 
+    btn btn-color
+    btn btn-outline-color btn-lg (tamaño)
+    btn btn data-toggle="button"
+    btn-group (a un contenedor para agrupar botones)
+    (mirar capturas de pantalla)
+
+#listas
+    (mirar capturas de pantalla)
+
+#navegaciones
+    navbar navbar-spam-md-light bg-light
+    http://mialtoweb.es/menu-de-navegacion-en-bootstrap-4/
+    http://mialtoweb.es/barra-de-navegacion-en-bootstrap-4/

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" ng-app="APP">
+<html lang="es" >
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,7 +9,6 @@
         <link rel="stylesheet" href="css/ccsPrincipal.css">
         <link rel="stylesheet" href="css/tablasyAngular.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
-		<script src="controlador.js"></script>
 		<title>Inicio</title>
 	</head>
 	<body>
@@ -70,14 +69,27 @@
                 $.getJSON(url,function(equipos){
                     $.each(equipos, function(i,equipo){
                         var seccion =
-                        "<section id='"+equipo.razon.replace(/ /g, "").toLowerCase()+"' class='col-sm-4 container'>"+
-                            "<header>"+
-                                "<h2>"+equipo.razon+"</h2>"+
-                                "<h4>"+equipo.anio+"</h4>"+
-                                "<h4>"+equipo.estadio+"</h4>"+
-                                "<h4>"+"<img src='imagenes/"+equipo.escudo+"' class='escudo' alt='escudo'>"+"</h4>"+
-                            "</header>"+
+                        "<section class='col-sm-4 container justify-content-center'>"+
+                            "<div class='tarjeta row container' >"+
+                                "<section class='tarjetaEq col-sm-12 justify-content-center'>"+
+                                    "<header>"+
+                                        "<h5>"+equipo.razon+"</h5>"+
+                                        "<h6>"+equipo.anio+"</h6>"+
+                                        "<h6>"+equipo.estadio+"</h6>"+
+                                        "<h4>"+"<img src='imagenes/"+equipo.escudo+"' class='escudo' alt='escudo'>"+"</h4>"+
+                                    "</header>"+
+                                "</section>"+
+                                "<section id='"+equipo.razon.replace(/ /g, "").toLowerCase()+"' class='tarjetaJug col-sm-12 justify-content-center container'  style='border-style:solid'>"+
+                                    "<div id='portero' class='row container col-sm-12  justify-content-center'>"+"</div>"+
+                                    "<div id='defensa' class='row container col-sm-12  justify-content-center'>"+"</div>"+
+                                    "<div id='medio' class='row container col-sm-12  justify-content-center'>"+"</div>"+
+                                    "<div id='delantero' class='row container col-sm-12  justify-content-center'>"+"</div>"+
+                                "</section>"+
+                            "</div>"+
                         "</section>";
+
+
+                        
                         $(seccion).appendTo("#contenido");
                         obtenerArticles(equipo.razon);
                     });
@@ -94,14 +106,14 @@
                 json=$.getJSON(url, function(jugadores){
                                 $.each(jugadores, function(i,jugador){
                                     var newArticle =
-                                    "<article>"
-                                    +"<h5>NOMBRE: "+jugador.nombre+"</h5>"
-                                    +"<h5>EDAD: "+jugador.edad+"</h5>"
+                                    "<article class='col-sm-3 '>"
+                                    +"<h6>"+jugador.nombre+"</h6>"
+                                    /*+"<h5>EDAD: "+jugador.edad+"</h5>"
                                     +"<h5>NACIONALIDAD: "+jugador.nacionalidad+"</h5>"
-                                    +"<h5>POSICION: "+jugador.posicion+"</h5>"
-                                    +"</article></br>";
-                                    
-                                    $(newArticle).appendTo('#'+equipo.replace(/ /g, "").toLowerCase());
+                                    +"<h5>POSICION: "+jugador.posicion+"</h5>"*/
+                                    +"</article>";
+                                   
+                                    $(newArticle).appendTo('#'+equipo.replace(/ /g, "").toLowerCase()+' #'+jugador.posicion.toLowerCase());
                                    
                                 });
                                     

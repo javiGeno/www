@@ -44,3 +44,8 @@
     list-style: none;
     
 }
+
+.link:hover{
+
+    opacity: 0.7;
+}

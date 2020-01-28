@@ -137,7 +137,7 @@
                         +"<td class='fk'>"+equipo.razon+"</td>"
                         +"<td>"+equipo.anio+"</td>"
                         +"<td>"+"<img src='imagenes/"+equipo.escudo+"' class='escudo' alt='escudo'>"+"</td>"
-                        +"<td>"+equipo.estadio+"<a href="+equipo.razon.replace(/ /g, "").toLowerCase()+".html class='fa fa-map-marker  aria-hidden='true'></i></td>"
+                        +"<td><a href="+equipo.razon.replace(/ /g, "").toLowerCase()+".html class='fa fa-map-marker  aria-hidden='true'>"+equipo.estadio+"</a></td>"
                         +"</tr>";
                         $(newRow).appendTo("#tablajson tbody");
                     });

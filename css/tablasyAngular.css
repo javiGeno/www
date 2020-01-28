@@ -59,8 +59,9 @@ table{
     opacity: 0.5;
 }
 
-td{
+td, th{
     border-style: outset;
+    padding-left: 1%;
 }
 
 #tablajson2{
@@ -104,7 +105,8 @@ td{
 
 .tarjetaEq:hover  {
     
-    box-shadow: 0px 3px 6px #1c1a19;
+
+    box-shadow: 0px 9px 12px #1c1a19;
     
     
 }
